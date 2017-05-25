@@ -3,7 +3,7 @@
 # author: Gabriel Cueto <TheMushr00m - @Mushr00m_Dev>
 
 
-class matrix:
+class Matrix:
     _n = 0
     _m = 0
     _elems = None
@@ -42,5 +42,5 @@ class matrix:
     rows = property(fget=get_rows)
 
 
-m = matrix(3, 3)
+m = Matrix(3, 3)
 m.show_matrix()
