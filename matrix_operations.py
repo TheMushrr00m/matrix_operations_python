@@ -38,9 +38,16 @@ class Matrix:
         """ Devuelve el número de filas en la matriz """
         return self._n
 
+    def add(self, *matrix):
+        """ Puede recibir varias matrices como argumentos """
+        for i in range(self.rows):
+            row = []
+            for j in range(self.cols):
+                tmp = self._elems[i][j]
+                for m in matrix:
+                    tmp += m._elems[i][j]
+                row.append(tmp)
+            yield row
+
     cols = property(fget=get_cols)
     rows = property(fget=get_rows)
-
-
-m = Matrix(3, 3)
-m.show_matrix()
