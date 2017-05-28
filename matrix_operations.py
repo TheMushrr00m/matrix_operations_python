@@ -46,7 +46,7 @@ class Matrix:
         for i in range(self.rows):
             row = []
             for j in range(self.cols):
-                tmp = self._elems[i][j]
+                tmp = self.get_value_of_position(i, j)
                 for m in matrix:
                     tmp += m.get_value_of_position(i, j)
                 row.append(tmp)
@@ -61,5 +61,3 @@ class Matrix:
 
     cols = property(fget=get_cols)
     rows = property(fget=get_rows)
-
-
