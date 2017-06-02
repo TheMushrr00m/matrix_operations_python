@@ -39,6 +39,7 @@ class Matrix:
         return self._n
 
     def get_value_of_position(self, i, j):
+        """ Devuelve el valor en la fila(i), columna(j) de la matriz """
         return self._elems[i][j]
 
     def add(self, *matrix):
@@ -53,10 +54,27 @@ class Matrix:
             yield row
 
     def scalar_product(self, x):
+        """ x: Número real """
         for i in range(self.rows):
             row = []
             for j in range(self.cols):
                 row.append(self.get_value_of_position(i, j)*x)
+            yield row
+
+    def product(self, m):
+        """ Recibe una matriz como argumento """
+        if self.rows is not m.cols:
+            raise Exception('Number of rows'
+                            'and number of columns'
+                            "don't match")
+        for i in range(self.rows):
+            row = []
+            for j in range(m.cols):
+                add = 0
+                for c in range(self.cols):
+                    add += self.get_value_of_position(i, c) * \
+                           m.get_value_of_position(c, j)
+                row.append(add)
             yield row
 
     cols = property(fget=get_cols)
