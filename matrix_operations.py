@@ -89,21 +89,3 @@ class Matrix:
 
     cols = property(fget=get_cols)
     rows = property(fget=get_rows)
-
-
-m = Matrix(3,3)
-# First row
-m.define_elem(0,0,1)
-m.define_elem(0,1,2)
-m.define_elem(0,2,3)
-# Second row
-m.define_elem(1,0,4)
-m.define_elem(1,1,5)
-m.define_elem(1,2,6)
-# Third row
-m.define_elem(2,0,7)
-m.define_elem(2,1,8)
-m.define_elem(2,2,9)
-
-for e in m.transpose():
-    print(e)
