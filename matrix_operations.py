@@ -3,7 +3,7 @@
 # author: Gabriel Cueto <TheMushr00m - @Mushr00m_Dev>
 
 
-class Matrix:
+class Matrix(object):
     _n = 0
     _m = 0
     _elems = None
@@ -84,7 +84,7 @@ class Matrix:
         for j in range(self.cols):
             row = []
             for i in range(self.rows):
-                row.append(self.get_value_of_position(i,j))
+                row.append(self.get_value_of_position(i, j))
             yield row
 
     cols = property(fget=get_cols)
